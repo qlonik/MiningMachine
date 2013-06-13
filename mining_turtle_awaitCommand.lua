@@ -7,8 +7,8 @@ print("Waiting for incoming messages..")
 
 while true do
   senderID, message, distance = rednet.receive()
-  io.write(message)
-  if shell.run(message.." .. ") then
+  io.write(message.." .. ")
+  if shell.run(message) then
     print("done")
   else
     print("error")
