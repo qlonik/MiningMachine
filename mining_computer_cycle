@@ -2,7 +2,7 @@ local direction = "forward"
 local modemSide = "right"
  
 if not rednet.isOpen(modemSide) then
-   rednet.open(modemSide)
+  rednet.open(modemSide)
 end
  
 shell.run("mvFrame", direction)
@@ -14,6 +14,6 @@ end
  
 local i = 0
 while i ~= 16 do
-   senderID, message, distance = rednet.receive()
-   i = i + 1
+  senderID, message, distance = rednet.receive()
+  i = i + 1
 end
