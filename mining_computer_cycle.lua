@@ -21,8 +21,6 @@ if not rednet.isOpen(modemSide) then
   rednet.open(modemSide)
 end
 
-print("Running")
-
 for i = 1, steps do
   if steps > 1 then
     io.write("Step #"..i.." out of "..steps)
