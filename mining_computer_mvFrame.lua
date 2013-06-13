@@ -41,5 +41,5 @@ end
  
 for i = 1, steps do
   pulse(direction)
-  sleep(1)
+  sleep(0.5)
 end
