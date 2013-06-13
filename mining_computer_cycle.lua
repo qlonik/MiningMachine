@@ -10,8 +10,11 @@ end
 
 if #tArgs > 1 then
   printUsage()
-else 
-  steps = tonumber(tArgs[1])
+else
+  local tmp_steps = tonumber(tArgs[1])
+  if (tArgs[1] ~= nil) and (tmp_steps > 1) then
+    steps = tmp_steps
+  end
 end
  
 if not rednet.isOpen(modemSide) then
