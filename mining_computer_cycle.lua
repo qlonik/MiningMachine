@@ -25,8 +25,6 @@ for i = 1, steps do
   if steps > 1 then
     io.write("Step #"..i.." out of "..steps)
   end
-  
-  shell.run("mvFrame", direction)
 
   -- send dig command to all turtles
   for i = 3, 18 do
@@ -38,6 +36,8 @@ for i = 1, steps do
     senderID, message, distance = rednet.receive()
     i = i + 1
   end
+  
+  shell.run("mvFrame", direction)
   
   print(" .. done")
 end
