@@ -2,6 +2,8 @@ local direction = "forward"
 local modemSide = "right"
 local tArgs = {...}
 local steps = 1
+local turtles = 16
+local firstTurtle = 3
 
 function printUsage()
   print("Usage: "..fs.getName(shell.getRunningProgram()).." [steps]")
@@ -27,14 +29,14 @@ for i = 1, steps do
   end
 
   -- send dig command to all turtles
-  for i = 3, 18 do
-    rednet.send(i, "cycle")
+  for j = firstTurtle, (firstTurtle + turtles - 1) do
+    rednet.send(j, "cycle")
   end
 
-  local i = 0
-  while i ~= 16 do
+  local j = 0
+  while j < turtles do
     senderID, message, distance = rednet.receive()
-    i = i + 1
+    j = j + 1
   end
   
   shell.run("mvFrame", direction)
