@@ -1,8 +1,8 @@
 local rsInputSide = "left"
 
-while true do
-	print("Running..")
+print("Running..")
 
+while true do
 	if redstone.getInput(rsInputSide) == true then
 		shell.run("cycle")
 	end
