@@ -34,8 +34,6 @@ if #tArgs == 1 or #tArgs == 2 then
 
 	if type(tmp_steps) == "number" and tmp_steps > 0 then
 		steps = tmp_steps
-	else 
-		printUsage()
 	end
 else
 	printUsage()
