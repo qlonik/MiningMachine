@@ -1,8 +1,7 @@
-local direction = "forward"
-local steps = 1
-local rsBundleSide = "back"
-local tArgs = {...}
- 
+direction = "forward"
+steps = 1
+rsBundleSide = "back"
+tArgs = {...} 
 movement = {
   ["left"]    = {color = colors.white},
   ["right"]   = {color = colors.black},
@@ -23,20 +22,22 @@ function pulse(direction)
 end
  
 if #tArgs == 1 or #tArgs == 2 then
-  if movement[tArgs[1]] ~= nil then
-    direction = tostring(tArgs[1])
+  local tmp_direction = tostring(tArgs[1])
+  local tmp_steps = tonumber(tArgs[2])
+  
+  if movement[tmp_direction] ~= nil then
+    direction = tmp_direction
   else
     printUsage()
-    return
   end
   
-  local tmp_steps = tonumber(tArgs[2])
-  if tArgs[2] ~= nil and tmp_steps > 0 then
+  if type(tmp_steps) == "number" and tmp_steps > 0 then
     steps = tmp_steps
+   else 
+    printUsage()
   end
 else
   printUsage()
-  return
 end
  
 for i = 1, steps do
