@@ -1,4 +1,4 @@
-local timeout = 45
+local timeout = 30
 local miningWellSpot = 1
 
 function deploy()
