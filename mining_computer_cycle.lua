@@ -18,8 +18,6 @@ else
 
 	if (tmp_steps ~= nil) and (tmp_steps > 1) then
 		steps = tmp_steps
-	else
-		printUsage()
 	end
 end
 
