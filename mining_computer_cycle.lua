@@ -2,7 +2,7 @@ local direction = "forward"
 local modemSide = "right"
 local steps = 1
 
-local turtles = 16
+local turtles = 64
 local firstTurtle = 3
 local tArgs = {...}
 
