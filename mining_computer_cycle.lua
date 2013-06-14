@@ -27,9 +27,10 @@ end
 
 for i = 1, steps do
 	if steps > 1 then
-		io.write("Step #"..i.." out of "..steps)
+		io.write("Step #"..i.." out of "..steps.." ")
 	end
 
+	io.write("Digging .. ")
 	-- send dig command to all turtles
 	for j = firstTurtle, (firstTurtle + turtles - 1) do
 		rednet.send(j, "cycle")
@@ -42,7 +43,8 @@ for i = 1, steps do
 		j = j + 1
 	end
 
+	io.write("Moving .. ")
 	shell.run("mvFrame", direction)
 
-	print(" .. done")
+	print("done")
 end
